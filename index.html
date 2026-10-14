@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tic Tac Toe</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="container">
+
+    <!-- HOME / SELECTION VIEW -->
+    <div id="homeView" class="view">
+        <h1>TIC TAC TOE</h1>
+        <p class="subtitle">Select your game settings</p>
+
+        <!-- Board Size Selection -->
+        <div class="setting-group">
+            <h3>Board Size</h3>
+            <div class="button-group">
+                <button type="button" class="option-btn active" data-type="size" data-value="3">3 × 3 (Classic)</button>
+                <button type="button" class="option-btn" data-type="size" data-value="6">6 × 6 (Connect 4)</button>
+            </div>
+        </div>
+
+        <!-- Mode Selection -->
+        <div class="setting-group">
+            <h3>Game Mode</h3>
+            <div class="button-group">
+                <button type="button" class="option-btn active" data-type="mode" data-value="pvp">Player vs Player</button>
+                <button type="button" class="option-btn" data-type="mode" data-value="ai">Player vs Computer</button>
+            </div>
+        </div>
+
+        <!-- Start Button -->
+        <button id="startGameBtn" class="btn primary-btn">START GAME</button>
+    </div>
+
+    <!-- GAMEPLAY VIEW -->
+    <div id="gameView" class="view" style="display: none;">
+        <!-- Top Navigation Bar -->
+        <div class="top-nav">
+            <button id="backToHomeBtn" class="btn small-btn">← Menu</button>
+            <span id="activeMatchBadge" class="info-badge">3×3 • PVP</span>
+        </div>
+
+        <h2 id="gameTitle">3×3 TIC TAC TOE</h2>
+        <p id="gameRuleDescription" class="rule-text">Connect 3 symbols to win</p>
+
+        <!-- Scoreboard -->
+        <div class="scoreboard">
+            <div class="score-card">
+                <span id="labelPlayerX">Player X</span>
+                <span id="scoreX" class="score-val">0</span>
+            </div>
+            <div class="score-card">
+                <span>Draws</span>
+                <span id="scoreDraw" class="score-val">0</span>
+            </div>
+            <div class="score-card">
+                <span id="labelPlayerO">Player O</span>
+                <span id="scoreO" class="score-val">0</span>
+            </div>
+        </div>
+
+        <!-- Turn & Status -->
+        <div class="status-box">
+            <span id="currentPlayer" class="turn-tag">X</span>
+            <span id="gameStatus">Player X's Turn</span>
+        </div>
+
+        <!-- Game Board -->
+        <div class="board-wrapper">
+            <div id="gameBoard" class="board grid-3"></div>
+        </div>
+
+        <!-- Controls -->
+        <div class="controls">
+            <button id="restartBtn" class="btn">Restart</button>
+            <button id="resetBtn" class="btn">Reset Scores</button>
+        </div>
+    </div>
+
+</div>
+
+<script src="game.js"></script>
+</body>
+</html>
